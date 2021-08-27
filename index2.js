@@ -15,22 +15,22 @@ const users = [
 //   });
 // };
 
-// const toggleUserState = async (allUsers, userName) => {
-//   const updatedUsers = allUsers.map((user) =>
-//     user.name === userName ? { ...user, active: !user.active } : user
-//   );
-
-//   return updatedUsers;
-// };
-// console.log(toggleUserState(users, "Mango"));
-
-const toggleUserState = (allUsers, userName, callback) => {
+const toggleUserState = async (allUsers, userName) => {
   const updatedUsers = allUsers.map((user) =>
     user.name === userName ? { ...user, active: !user.active } : user
   );
 
-  return Promise.resolve(updatedUsers);
+  return updatedUsers;
 };
+console.log(toggleUserState(users, "Mango"));
+
+// const toggleUserState = (allUsers, userName, callback) => {
+//   const updatedUsers = allUsers.map((user) =>
+//     user.name === userName ? { ...user, active: !user.active } : user
+//   );
+
+//   return Promise.resolve(updatedUsers);
+// };
 
 const logger = (updatedUsers) => console.table(updatedUsers);
 
